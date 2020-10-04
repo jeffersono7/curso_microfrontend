@@ -1,10 +1,12 @@
 const webpackMerge = require("webpack-merge");
-const singleSpaDefaults = require("webpack-config-single-spa");
+const singleSpaDefaults = require("webpack-config-single-spa-ts");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (webpackConfigEnv) => {
+  const orgName = "microfrontend";
+
   const defaultConfig = singleSpaDefaults({
-    orgName: "curso",
+    orgName,
     projectName: "root-config",
     webpackConfigEnv,
   });
@@ -20,6 +22,7 @@ module.exports = (webpackConfigEnv) => {
         template: "src/index.ejs",
         templateParameters: {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal === "true",
+          orgName,
         },
       }),
     ],

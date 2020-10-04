@@ -9,3 +9,4 @@ No projeto criamos duas aplicações em React com a configuração para funciona
 - SystemJS
 - React
 - Yarn
+- Material-UI
